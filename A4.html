@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A4 - 회원가입 폼</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 외부 스타일시트 연결 -->
+    <link rel="stylesheet" href="register.css">
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+
+    <!-- 회원가입 폼 컨테이너 -->
+    <div class="signup-container w-full max-w-md bg-white rounded-2xl shadow-xl p-8 space-y-6">
+        
+        <!-- 타이틀 -->
+        <div class="text-center space-y-2">
+            <h1 class="text-2xl font-bold text-gray-800">계정 만들기</h1>
+            <p class="text-sm text-gray-500">정보를 입력하여 회원가입을 완료하세요.</p>
+        </div>
+
+        <!-- 회원가입 폼 -->
+        <form class="space-y-4" onsubmit="event.preventDefault();">
+            
+            <!-- 이름 입력 필드 -->
+            <div class="space-y-1">
+                <label for="username" class="block text-sm font-medium text-gray-700 text-left">이름 <span class="text-red-500">*</span></label>
+                <input type="text" id="username" name="username" required 
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"
+                    placeholder="홍길동">
+            </div>
+
+            <!-- 이메일 입력 필드 -->
+            <div class="space-y-1">
+                <label for="email" class="block text-sm font-medium text-gray-700 text-left">이메일 <span class="text-red-500">*</span></label>
+                <input type="email" id="email" name="email" required 
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"
+                    placeholder="example@email.com">
+            </div>
+
+            <!-- 비밀번호 입력 필드 -->
+            <div class="space-y-1">
+                <label for="password" class="block text-sm font-medium text-gray-700 text-left">비밀번호 <span class="text-red-500">*</span></label>
+                <input type="password" id="password" name="password" required 
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"
+                    placeholder="비밀번호 입력">
+            </div>
+
+            <!-- 비밀번호 확인 필드 -->
+            <div class="space-y-1">
+                <label for="password-confirm" class="block text-sm font-medium text-gray-700 text-left">비밀번호 확인 <span class="text-red-500">*</span></label>
+                <input type="password" id="password-confirm" name="password-confirm" required 
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"
+                    placeholder="비밀번호 재입력">
+            </div>
+
+            <!-- 가입 버튼 (Tailwind 클래스로 배경색 및 hover 색상 직접 지정) -->
+            <button type="submit" class="w-full py-3 rounded-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-700 shadow-md transition-all duration-200 mt-4 cursor-pointer">
+                회원가입
+            </button>
+
+        </form>
+    </div>
+
+</body>
+</html>
