@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#theme-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.page-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  background-color: #ffffff;
+  color: #222222;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: sans-serif;
+}
+
+.toggle-switch {
+  width: 70px;
+  height: 36px;
+  background-color: #cccccc;
+  border-radius: 18px;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: background-color 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-icon {
+  width: 28px;
+  height: 28px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.status-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sub-text {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* 다크 모드 활성화 시 스타일 (:checked 선택자 활용) */
+#theme-toggle:checked ~ .page-container {
+  background-color: #222222;
+  color: #ffffff;
+}
+
+#theme-toggle:checked ~ .page-container .toggle-switch {
+  background-color: #1a237e;
+}
+
+#theme-toggle:checked ~ .page-container .toggle-icon {
+  background-color: #ffd600;
+  transform: translateX(34px);
+}
